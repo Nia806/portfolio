@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       // Now set up navigation logic after header is loaded
       setupNavigation();
-      loadPage("index"); // load default
+      loadPage("home"); // load default
     });
 });
 
@@ -26,7 +26,7 @@ function setupNavigation() {
 }
 
 function loadPage(page) {
-  fetch(`pages/${page}.html`)
+  fetch(`${page}.html`)
     .then(res => {
       if (!res.ok) throw new Error("Page not found");
       return res.text();
