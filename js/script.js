@@ -11,6 +11,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+window.addEventListener("DOMContentLoaded", ()=>{
+  fetch("components/footer.html")
+    .then(res => res.text())
+    .then(footerHTML => {
+      document.getElementById("site-footer").innerHTML = footerHTML;
+    })
+})
+
 function setupNavigation() {
   const links = document.querySelectorAll("nav a[data-page]");
   links.forEach(link => {
